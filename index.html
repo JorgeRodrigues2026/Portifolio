@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jorge Luiz Susin Rodrigues | AI & Data Analyst </title>
+    <title>Jorge Luiz Susin Rodrigues | Data Analyst & AI </title>
     <meta name="description" content="Portfólio profissional de Jorge Luiz Susin Rodrigues - Inteligência Artificial, Modelagem Preditiva e Ciência de Dados.">
     
     <!-- Tailwind CSS CDN -->
@@ -84,9 +84,16 @@
             transition: all 0.3s ease;
         }
         .skill-card:hover {
-            border-color: #6366f1;
-            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.15);
-            transform: translateY(-4px);
+            border-color: #8b9cff;
+            box-shadow: 0 12px 30px rgba(99, 102, 241, 0.18);
+            transform: translateY(-5px);
+        }
+        .tech-pill {
+            transition: all 0.2s ease;
+        }
+        .tech-pill:hover {
+            transform: scale(1.05);
+            border-color: #f5b013;
         }
     </style>
 </head>
@@ -134,7 +141,7 @@
             <div class="lg:w-7/12 space-y-6">
                 <div class="inline-block px-4 py-1.5 rounded-full border border-amber-500/40 bg-amber-500/10">
                     <span data-i18n="hero_badge" class="font-mono text-xs font-semibold text-amber-700 dark:text-accentAmber">
-                        # Analista de IA e Dados
+                        # Analista de Dados & IA
                     </span>
                 </div>
 
@@ -230,66 +237,232 @@
             </div>
         </section>
 
-        <!-- 3. TECH STACK & FERRAMENTAS -->
+        <!-- 3. TECH STACK & FERRAMENTAS (COM LOGOS OFICIAIS COLORIDOS) -->
         <section id="tech-stack" class="py-24 border-t border-slate-200 dark:border-borderIndigo/50">
             <h2 data-i18n="stack_title" class="text-3xl font-bold text-slate-900 dark:text-white mb-2">Tech Stack & Ferramentas</h2>
             <div class="w-12 h-1 bg-indigo-600 dark:bg-accentLilac rounded mb-12"></div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-                <!-- Card 1 -->
-                <div class="skill-card rounded-xl p-6 flex flex-col justify-between h-48 bg-white dark:bg-[#0a0524] border border-slate-200 dark:border-borderIndigo shadow-sm">
-                    <div class="text-indigo-600 dark:text-accentLilac">
-                        <i data-lucide="brain-circuit" class="w-9 h-9"></i>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Card 1: Frameworks de Machine Learning -->
+                <div class="skill-card rounded-2xl p-6 flex flex-col justify-between bg-white dark:bg-[#0a0524] border border-slate-200 dark:border-borderIndigo shadow-sm">
                     <div>
-                        <h3 data-i18n="stack_c1_title" class="font-bold text-slate-900 dark:text-white text-base mb-1">Modelagem & IA</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">(Scikit-Learn, PyTorch, TensorFlow)</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-mono uppercase tracking-wider px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-600 dark:text-accentLilac border border-indigo-500/20">
+                                Deep Learning & ML
+                            </span>
+                            <i data-lucide="brain-circuit" class="w-5 h-5 text-slate-400"></i>
+                        </div>
+                        <h3 data-i18n="stack_c1_title" class="font-bold text-slate-900 dark:text-white text-lg mb-4">
+                            Modelagem & Frameworks IA
+                        </h3>
+                    </div>
+
+                    <!-- Grid de Ícones Oficiais -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-2">
+                        <div class="tech-pill flex items-center gap-2 p-2 rounded-lg bg-slate-50 dark:bg-cardDark border border-slate-200 dark:border-borderIndigo">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" class="w-6 h-6 shrink-0">
+                            <span class="text-xs font-mono font-medium text-slate-700 dark:text-slate-200">TensorFlow</span>
+                        </div>
+                        <div class="tech-pill flex items-center gap-2 p-2 rounded-lg bg-slate-50 dark:bg-cardDark border border-slate-200 dark:border-borderIndigo">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="PyTorch" class="w-6 h-6 shrink-0">
+                            <span class="text-xs font-mono font-medium text-slate-700 dark:text-slate-200">PyTorch</span>
+                        </div>
+                        <div class="tech-pill flex items-center gap-2 p-2 rounded-lg bg-slate-50 dark:bg-cardDark border border-slate-200 dark:border-borderIndigo">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-Learn" class="w-6 h-6 shrink-0">
+                            <span class="text-xs font-mono font-medium text-slate-700 dark:text-slate-200">Scikit-Learn</span>
+                        </div>
+                        <div class="tech-pill flex items-center gap-2 p-2 rounded-lg bg-slate-50 dark:bg-cardDark border border-slate-200 dark:border-borderIndigo">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/keras/keras-original.svg" alt="Keras" class="w-6 h-6 shrink-0">
+                            <span class="text-xs font-mono font-medium text-slate-700 dark:text-slate-200">Keras</span>
+                        </div>
+                        <div class="tech-pill flex items-center gap-2 p-2 rounded-lg bg-slate-50 dark:bg-cardDark border border-slate-200 dark:border-borderIndigo">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" alt="OpenCV" class="w-6 h-6 shrink-0">
+                            <span class="text-xs font-mono font-medium text-slate-700 dark:text-slate-200">OpenCV</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="skill-card rounded-xl p-6 flex flex-col justify-between h-48 bg-white dark:bg-[#0a0524] border border-slate-200 dark:border-borderIndigo shadow-sm">
-                    <div class="text-indigo-600 dark:text-accentLilac">
-                        <i data-lucide="file-code-2" class="w-9 h-9"></i>
-                    </div>
+                <!-- Card 2: Ciência de Dados & Análise -->
+                <div class="skill-card rounded-2xl p-6 flex flex-col justify-between bg-white dark:bg-[#0a0524] border border-slate-200 dark:border-borderIndigo shadow-sm">
                     <div>
-                        <h3 data-i18n="stack_c2_title" class="font-bold text-slate-900 dark:text-white text-base mb-1">Python & APIs</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">(FastAPI, Multiprocessing, REST)</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-mono uppercase tracking-wider px-2.5 py-1 rounded bg-amber-500/10 text-amber-600 dark:text-accentAmber border border-amber-500/20">
+                                Data Science & Analytics
+                            </span>
+                            <i data-lucide="bar-chart-3" class="w-5 h-5 text-slate-400"></i>
+                        </div>
+                        <h3 data-i18n="stack_c2_title" class="font-bold text-slate-900 dark:text-white text-lg mb-4">
+                            Python & Ecossistema de Dados
+                        </h3>
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-2">
+                        <div class="tech-pill flex items-center gap-2 p-2 rounded-lg bg-slate-50 dark:bg-cardDark border border-slate-200 dark:border-borderIndigo">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" class="w-6 h-6 shrink-0">
+                            <span class="text-xs font-mono font-medium text-slate-700 dark:text-slate-200">Python</span>
+                        </div>
+                        <div class="tech-pill flex items-center gap-2 p-2 rounded-lg bg-slate-50 dark:bg-cardDark border border-slate-200 dark:border-borderIndigo">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="Pandas" class="w-6 h-6 shrink-0 dark:invert">
+                            <span class="text-xs font-mono font-medium text-slate-700 dark:text-slate-200">Pandas</span>
+                        </div>
+                        <div class="tech-pill flex items-center gap-2 p-2 rounded-lg bg-slate-50 dark:bg-cardDark border border-slate-200 dark:border-borderIndigo">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" alt="NumPy" class="w-6 h-6 shrink-0">
+                            <span class="text-xs font-mono font-medium text-slate-700 dark:text-slate-200">NumPy</span>
+                        </div>
+                        <div class="tech-pill flex items-center gap-2 p-2 rounded-lg bg-slate-50 dark:bg-cardDark border border-slate-200 dark:border-borderIndigo">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib" class="w-6 h-6 shrink-0">
+                            <span class="text-xs font-mono font-medium text-slate-700 dark:text-slate-200">Matplotlib</span>
+                        </div>
+                        <div class="tech-pill flex items-center gap-2 p-2 rounded-lg bg-slate-50 dark:bg-cardDark border border-slate-200 dark:border-borderIndigo">
+                            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" fill="#00549F"/>
+                                <path d="M8 15C8.5 16.5 10.5 17 12.5 16.5C14.5 16 15.5 14 14 12.5C12.5 11 9.5 11.5 9.5 9.5C9.5 7.5 12 7 14 7.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span class="text-xs font-mono font-medium text-slate-700 dark:text-slate-200">SciPy</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="skill-card rounded-xl p-6 flex flex-col justify-between h-48 bg-white dark:bg-[#0a0524] border border-slate-200 dark:border-borderIndigo shadow-sm">
-                    <div class="text-indigo-600 dark:text-accentLilac">
-                        <i data-lucide="database" class="w-9 h-9"></i>
-                    </div>
+                <!-- Card 3: LLMs, Agentes & Vetores (Com Claude Code Mascote!) -->
+                <div class="skill-card rounded-2xl p-6 flex flex-col justify-between bg-white dark:bg-[#0a0524] border border-slate-200 dark:border-borderIndigo shadow-sm">
                     <div>
-                        <h3 data-i18n="stack_c3_title" class="font-bold text-slate-900 dark:text-white text-base mb-1">LLMs & Vetores</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">(Ollama, Llamafile, ChromaDB, GGUF)</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-mono uppercase tracking-wider px-2.5 py-1 rounded bg-orange-500/10 text-orange-600 dark:text-orange-400 border border-orange-500/20">
+                                Generative AI & RAG
+                            </span>
+                            <i data-lucide="bot" class="w-5 h-5 text-slate-400"></i>
+                        </div>
+                        <h3 data-i18n="stack_c3_title" class="font-bold text-slate-900 dark:text-white text-lg mb-4">
+                            LLMs, Agentes & Vetores
+                        </h3>
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-2">
+                        <!-- Mascote Pixel Art do Claude Code (da sua imagem Claude_code.jpeg) -->
+                        <div class="tech-pill flex items-center gap-2 p-2 rounded-lg bg-slate-50 dark:bg-cardDark border border-slate-200 dark:border-borderIndigo">
+                            <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="4" y="4" width="16" height="12" fill="#F97316"/>
+                                <rect x="1" y="10" width="3" height="3" fill="#F97316"/>
+                                <rect x="20" y="10" width="3" height="3" fill="#F97316"/>
+                                <rect x="6" y="16" width="2" height="4" fill="#F97316"/>
+                                <rect x="9" y="16" width="2" height="4" fill="#F97316"/>
+                                <rect x="13" y="16" width="2" height="4" fill="#F97316"/>
+                                <rect x="16" y="16" width="2" height="4" fill="#F97316"/>
+                                <rect x="7" y="7" width="2" height="4" fill="#1E1B18"/>
+                                <rect x="15" y="7" width="2" height="4" fill="#1E1B18"/>
+                            </svg>
+                            <span class="text-xs font-mono font-medium text-slate-700 dark:text-slate-200">Claude Code</span>
+                        </div>
+
+                        <!-- OpenAI -->
+                        <div class="tech-pill flex items-center gap-2 p-2 rounded-lg bg-slate-50 dark:bg-cardDark border border-slate-200 dark:border-borderIndigo">
+                            <img src="https://cdn.simpleicons.org/openai" alt="OpenAI" class="w-5 h-5 shrink-0 dark:invert">
+                            <span class="text-xs font-mono font-medium text-slate-700 dark:text-slate-200">OpenAI</span>
+                        </div>
+
+                        <!-- Hugging Face -->
+                        <div class="tech-pill flex items-center gap-2 p-2 rounded-lg bg-slate-50 dark:bg-cardDark border border-slate-200 dark:border-borderIndigo">
+                            <img src="https://cdn.simpleicons.org/huggingface/FFD21E" alt="Hugging Face" class="w-6 h-6 shrink-0">
+                            <span class="text-xs font-mono font-medium text-slate-700 dark:text-slate-200">HuggingFace</span>
+                        </div>
+
+                        <!-- Ollama -->
+                        <div class="tech-pill flex items-center gap-2 p-2 rounded-lg bg-slate-50 dark:bg-cardDark border border-slate-200 dark:border-borderIndigo">
+                            <img src="https://cdn.simpleicons.org/ollama" alt="Ollama" class="w-5 h-5 shrink-0 dark:invert">
+                            <span class="text-xs font-mono font-medium text-slate-700 dark:text-slate-200">Ollama</span>
+                        </div>
+
+                        <!-- ChromaDB -->
+                        <div class="tech-pill flex items-center gap-2 p-2 rounded-lg bg-slate-50 dark:bg-cardDark border border-slate-200 dark:border-borderIndigo">
+                            <i data-lucide="database" class="w-5 h-5 text-emerald-500 shrink-0"></i>
+                            <span class="text-xs font-mono font-medium text-slate-700 dark:text-slate-200">ChromaDB</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Card 4 -->
-                <div class="skill-card rounded-xl p-6 flex flex-col justify-between h-48 bg-white dark:bg-[#0a0524] border border-slate-200 dark:border-borderIndigo shadow-sm">
-                    <div class="text-indigo-600 dark:text-accentLilac">
-                        <i data-lucide="terminal" class="w-9 h-9"></i>
-                    </div>
+                <!-- Card 4: Infraestrutura, GitHub Brasil & Deploy -->
+                <div class="skill-card rounded-2xl p-6 flex flex-col justify-between bg-white dark:bg-[#0a0524] border border-slate-200 dark:border-borderIndigo shadow-sm">
                     <div>
-                        <h3 data-i18n="stack_c4_title" class="font-bold text-slate-900 dark:text-white text-base mb-1">Infra & Deploy</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">(Docker, Ubuntu Linux, CLI)</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-mono uppercase tracking-wider px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                                DevOps, Linux & APIs
+                            </span>
+                            <i data-lucide="terminal" class="w-5 h-5 text-slate-400"></i>
+                        </div>
+                        <h3 data-i18n="stack_c4_title" class="font-bold text-slate-900 dark:text-white text-lg mb-4">
+                            Infraestrutura, Git & Deploy
+                        </h3>
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-2">
+                        <!-- GitHub estilizado Verde/Amarelo (como na sua imagem github_brazil_logo.jpeg) -->
+                        <div class="tech-pill flex items-center gap-2 p-2 rounded-lg bg-slate-50 dark:bg-cardDark border border-slate-200 dark:border-borderIndigo">
+                            <span class="w-6 h-6 rounded-full bg-[#3b8543] flex items-center justify-center shrink-0">
+                                <img src="https://cdn.simpleicons.org/github/fce055" alt="GitHub" class="w-4 h-4">
+                            </span>
+                            <span class="text-xs font-mono font-medium text-slate-700 dark:text-slate-200">GitHub</span>
+                        </div>
+
+                        <div class="tech-pill flex items-center gap-2 p-2 rounded-lg bg-slate-50 dark:bg-cardDark border border-slate-200 dark:border-borderIndigo">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" class="w-6 h-6 shrink-0">
+                            <span class="text-xs font-mono font-medium text-slate-700 dark:text-slate-200">Docker</span>
+                        </div>
+
+                        <div class="tech-pill flex items-center gap-2 p-2 rounded-lg bg-slate-50 dark:bg-cardDark border border-slate-200 dark:border-borderIndigo">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ubuntu/ubuntu-original.svg" alt="Ubuntu" class="w-6 h-6 shrink-0">
+                            <span class="text-xs font-mono font-medium text-slate-700 dark:text-slate-200">Ubuntu</span>
+                        </div>
+
+                        <div class="tech-pill flex items-center gap-2 p-2 rounded-lg bg-slate-50 dark:bg-cardDark border border-slate-200 dark:border-borderIndigo">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" alt="FastAPI" class="w-6 h-6 shrink-0">
+                            <span class="text-xs font-mono font-medium text-slate-700 dark:text-slate-200">FastAPI</span>
+                        </div>
+
+                        <div class="tech-pill flex items-center gap-2 p-2 rounded-lg bg-slate-50 dark:bg-cardDark border border-slate-200 dark:border-borderIndigo">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux CLI" class="w-6 h-6 shrink-0">
+                            <span class="text-xs font-mono font-medium text-slate-700 dark:text-slate-200">Linux CLI</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Card 5 -->
-                <div class="skill-card rounded-xl p-6 flex flex-col justify-between h-48 bg-white dark:bg-[#0a0524] border border-slate-200 dark:border-borderIndigo shadow-sm">
-                    <div class="text-indigo-600 dark:text-accentLilac">
-                        <i data-lucide="filter" class="w-9 h-9"></i>
-                    </div>
+                <!-- Card 5: Pipelines, Competições & 3D -->
+                <div class="skill-card rounded-2xl p-6 flex flex-col justify-between bg-white dark:bg-[#0a0524] border border-slate-200 dark:border-borderIndigo shadow-sm md:col-span-2 lg:col-span-2">
                     <div>
-                        <h3 data-i18n="stack_c5_title" class="font-bold text-slate-900 dark:text-white text-base mb-1">Pipelines & 3D</h3>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">(ETL, Kaggle, MCP, Blender Nodes)</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-mono uppercase tracking-wider px-2.5 py-1 rounded bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20">
+                                Pipelines, Dashboards & 3D
+                            </span>
+                            <i data-lucide="layers" class="w-5 h-5 text-slate-400"></i>
+                        </div>
+                        <h3 data-i18n="stack_c5_title" class="font-bold text-slate-900 dark:text-white text-lg mb-4">
+                            Engenharia de Pipelines, Competições & Automação 3D
+                        </h3>
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+                        <div class="tech-pill flex items-center gap-2.5 p-2.5 rounded-lg bg-slate-50 dark:bg-cardDark border border-slate-200 dark:border-borderIndigo">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kaggle/kaggle-original.svg" alt="Kaggle" class="w-6 h-6 shrink-0">
+                            <span class="text-xs font-mono font-medium text-slate-700 dark:text-slate-200">Kaggle</span>
+                        </div>
+
+                        <div class="tech-pill flex items-center gap-2.5 p-2.5 rounded-lg bg-slate-50 dark:bg-cardDark border border-slate-200 dark:border-borderIndigo">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original.svg" alt="Blender" class="w-6 h-6 shrink-0">
+                            <span class="text-xs font-mono font-medium text-slate-700 dark:text-slate-200">Blender Nodes</span>
+                        </div>
+
+                        <div class="tech-pill flex items-center gap-2.5 p-2.5 rounded-lg bg-slate-50 dark:bg-cardDark border border-slate-200 dark:border-borderIndigo">
+                            <img src="https://cdn.simpleicons.org/onnx/005CED" alt="ONNX" class="w-6 h-6 shrink-0">
+                            <span class="text-xs font-mono font-medium text-slate-700 dark:text-slate-200">ONNX / GGUF</span>
+                        </div>
+
+                        <div class="tech-pill flex items-center gap-2.5 p-2.5 rounded-lg bg-slate-50 dark:bg-cardDark border border-slate-200 dark:border-borderIndigo">
+                            <i data-lucide="layout-dashboard" class="w-5 h-5 text-accentAmber shrink-0"></i>
+                            <span class="text-xs font-mono font-medium text-slate-700 dark:text-slate-200">Dashboards & BI</span>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
@@ -367,8 +540,8 @@
 
                         <div class="flex flex-wrap gap-2 pt-2">
                             <span class="px-3 py-1 rounded border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-bgDark text-xs font-mono text-indigo-700 dark:text-accentLilac">Python</span>
-                            <span class="px-3 py-1 rounded border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-bgDark text-xs font-mono text-indigo-700 dark:text-accentLilac">Predictive Modeling</span>
-                            <span class="px-3 py-1 rounded border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-bgDark text-xs font-mono text-indigo-700 dark:text-accentLilac">Data Analysis</span>
+                            <span class="px-3 py-1 rounded border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-bgDark text-xs font-mono text-indigo-700 dark:text-accentLilac">Pandas</span>
+                            <span class="px-3 py-1 rounded border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-bgDark text-xs font-mono text-indigo-700 dark:text-accentLilac">Scikit-Learn</span>
                             <span class="px-3 py-1 rounded border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-bgDark text-xs font-mono text-indigo-700 dark:text-accentLilac">ETL</span>
                             <span class="px-3 py-1 rounded border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-bgDark text-xs font-mono text-indigo-700 dark:text-accentLilac">BI</span>
                         </div>
@@ -420,7 +593,7 @@
                         <div class="flex flex-wrap gap-2 pt-2">
                             <span class="px-3 py-1 rounded border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-bgDark text-xs font-mono text-indigo-700 dark:text-accentLilac">Kaggle</span>
                             <span class="px-3 py-1 rounded border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-bgDark text-xs font-mono text-indigo-700 dark:text-accentLilac">Multiprocessing</span>
-                            <span class="px-3 py-1 rounded border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-bgDark text-xs font-mono text-indigo-700 dark:text-accentLilac">Data Pipeline</span>
+                            <span class="px-3 py-1 rounded border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-bgDark text-xs font-mono text-indigo-700 dark:text-accentLilac">NumPy</span>
                             <span class="px-3 py-1 rounded border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-bgDark text-xs font-mono text-indigo-700 dark:text-accentLilac">Offline Wheels</span>
                         </div>
 
@@ -553,7 +726,7 @@
                 nav_stack: "Tech Stack",
                 nav_projects: "Projetos",
                 nav_contact: "Contato",
-                hero_badge: "# Engenheiro de IA e Dados",
+                hero_badge: "# Analista de Dados & Engenheiro de IA",
                 hero_title: 'Transformando dados complexos em <span class="text-gradient-amber">Inteligência.</span>',
                 hero_bio: 'Olá, eu sou <strong class="text-slate-900 dark:text-white font-semibold">Jorge Luiz Susin Rodrigues</strong>! Desenvolvo modelos preditivos avançados, orquestro sistemas multiagentes e crio pipelines de machine learning de ponta a ponta — da infraestrutura Linux à API.',
                 hero_btn_projects: "Ver Projetos",
@@ -567,11 +740,11 @@
                 cert_1: "Análise de Dados Preditiva — SCTEC & SENAI",
                 cert_2: "Engenharia de Prompts e IA Generativa — SCTEC & SENAI",
                 stack_title: "Tech Stack & Ferramentas",
-                stack_c1_title: "Modelagem & IA",
-                stack_c2_title: "Python & APIs",
-                stack_c3_title: "LLMs & Vetores",
-                stack_c4_title: "Infra & Deploy",
-                stack_c5_title: "Pipelines & 3D",
+                stack_c1_title: "Modelagem & Frameworks IA",
+                stack_c2_title: "Python & Ecossistema de Dados",
+                stack_c3_title: "LLMs, Agentes & Vetores",
+                stack_c4_title: "Infraestrutura, Git & Deploy",
+                stack_c5_title: "Engenharia de Pipelines, Competições & Automação 3D",
                 proj_section_title: "Projetos em Destaque",
                 p1_title: "Mega_Jarvis — Orquestrador Multiagente",
                 p1_challenge: '<strong class="text-slate-900 dark:text-white">Desafio:</strong> Criação de um sistema robusto para gestão e orquestração de múltiplos agentes de IA locais, integrando recuperação de documentos (RAG) com baixa latência e privacidade total.',
@@ -602,7 +775,7 @@
                 nav_stack: "Tech Stack",
                 nav_projects: "Projects",
                 nav_contact: "Contact",
-                hero_badge: "# AI & Data Engineer",
+                hero_badge: "# Data Analyst & AI Engineer",
                 hero_title: 'Transforming complex data into <span class="text-gradient-amber">Intelligence.</span>',
                 hero_bio: 'Hi, I am <strong class="text-slate-900 dark:text-white font-semibold">Jorge Luiz Susin Rodrigues</strong>! I build advanced predictive models, orchestrate multi-agent systems, and engineer end-to-end machine learning pipelines — from Linux infrastructure to production APIs.',
                 hero_btn_projects: "View Projects",
@@ -616,11 +789,11 @@
                 cert_1: "Predictive Data Analysis — SCTEC & SENAI",
                 cert_2: "Prompt Engineering & Generative AI — SCTEC & SENAI",
                 stack_title: "Tech Stack & Tools",
-                stack_c1_title: "Modeling & AI",
-                stack_c2_title: "Python & APIs",
-                stack_c3_title: "LLMs & Vectors",
-                stack_c4_title: "Infra & Deploy",
-                stack_c5_title: "Pipelines & 3D",
+                stack_c1_title: "Modeling & AI Frameworks",
+                stack_c2_title: "Python & Data Science Ecosystem",
+                stack_c3_title: "LLMs, Agents & Vector DBs",
+                stack_c4_title: "Infrastructure, Git & Deploy",
+                stack_c5_title: "Pipeline Engineering, Competitions & 3D Automation",
                 proj_section_title: "Featured Projects",
                 p1_title: "Mega_Jarvis — Multi-Agent Orchestrator",
                 p1_challenge: '<strong class="text-slate-900 dark:text-white">Challenge:</strong> Build a robust system for managing and orchestrating multiple local AI agents, integrating document retrieval (RAG) with low latency and complete data privacy.',
@@ -668,7 +841,6 @@
                 }
             });
 
-            // Mostra no botão o idioma para o qual o usuário pode alternar
             document.getElementById('lang-label').textContent = lang === 'pt' ? 'EN' : 'PT';
             localStorage.setItem('portfolio_lang', lang);
         }
@@ -700,7 +872,6 @@
             applyTheme(currentTheme);
         }
 
-        // Inicializa o estado salvo ao carregar a página
         applyTheme(currentTheme);
         applyLanguage(currentLang);
     </script>
