@@ -1,17 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jorge Luiz Susin Rodrigues | Analista Dados / IA</title>
-    <meta name="description" content="Portfólio profissional de Jorge Luiz Susin Rodrigues - Expert em Inteligência Artificial, Modelagem Preditiva, Ciência de Dados, DeepLarning e Machine Learning.">
+    <title>Jorge Luiz Susin Rodrigues | AI & Data Engineer</title>
+    <meta name="description" content="Portfólio profissional de Jorge Luiz Susin Rodrigues - Inteligência Artificial, Modelagem Preditiva e Ciência de Dados.">
+    
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter & Fira Code -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
@@ -29,23 +37,38 @@
             }
         }
     </script>
+
     <style>
-        body {
+        /* Fundo Dinâmico Dark / Light */
+        html.dark body {
             background-color: #060318;
             background-image: 
                 radial-gradient(circle at 80% 10%, rgba(45, 25, 110, 0.35) 0%, transparent 45%),
                 radial-gradient(circle at 15% 70%, rgba(35, 20, 95, 0.3) 0%, transparent 45%);
             color: #f8fafc;
         }
+        html:not(.dark) body {
+            background-color: #f8fafc;
+            background-image: 
+                radial-gradient(circle at 80% 10%, rgba(139, 156, 255, 0.18) 0%, transparent 45%),
+                radial-gradient(circle at 15% 70%, rgba(245, 176, 19, 0.10) 0%, transparent 45%);
+            color: #0f172a;
+        }
         .text-gradient-amber {
+            background: linear-gradient(90deg, #6366f1 0%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        html.dark .text-gradient-amber {
             background: linear-gradient(90deg, #8b9cff 0%, #f5b013 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        /* Janela de código sempre estilo terminal escuro para contraste */
         .code-window {
             background: #0d0732;
             border: 1px solid #281d69;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
             position: relative;
         }
         .code-window::before {
@@ -58,63 +81,95 @@
             background: linear-gradient(90deg, transparent, #8b9cff, #f5b013, transparent);
         }
         .skill-card {
-            background: #0a0524;
-            border: 1px solid #1e1654;
             transition: all 0.3s ease;
         }
         .skill-card:hover {
-            border-color: #8b9cff;
-            box-shadow: 0 0 25px rgba(139, 156, 255, 0.15);
+            border-color: #6366f1;
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.15);
             transform: translateY(-4px);
         }
     </style>
 </head>
-<body class="antialiased selection:bg-accentLilac selection:text-bgDark">
+<body class="antialiased selection:bg-indigo-500 selection:text-white transition-colors duration-300">
 
-    <header class="fixed top-0 w-full z-50 bg-bgDark/80 backdrop-blur-md border-b border-borderIndigo">
+    <!-- Navbar -->
+    <header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-bgDark/80 backdrop-blur-md border-b border-slate-200 dark:border-borderIndigo transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#inicio" class="font-mono text-lg font-bold tracking-tight text-white hover:text-accentLilac transition">Início</a>
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
-                <a href="#sobre" class="hover:text-white transition">Sobre</a>
-                <a href="#tech-stack" class="hover:text-white transition">Tech Stack</a>
-                <a href="#projetos" class="hover:text-white transition">Projetos</a>
-                <a href="#contato" class="px-5 py-2.5 rounded-lg border border-borderIndigo bg-cardDark hover:border-accentLilac text-white transition">Contato</a>
-                <button aria-label="Tema Escuro" class="p-2 text-slate-400 hover:text-white transition">
-                    <i data-lucide="moon" class="w-4 h-4"></i>
+            <a href="#inicio" data-i18n="nav_home" class="font-mono text-lg font-bold tracking-tight text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-accentLilac transition">
+                Início
+            </a>
+
+            <nav class="flex items-center space-x-3 sm:space-x-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+                <a href="#sobre" data-i18n="nav_about" class="hidden md:inline hover:text-indigo-600 dark:hover:text-white transition">Sobre</a>
+                <a href="#tech-stack" data-i18n="nav_stack" class="hidden md:inline hover:text-indigo-600 dark:hover:text-white transition">Tech Stack</a>
+                <a href="#projetos" data-i18n="nav_projects" class="hidden md:inline hover:text-indigo-600 dark:hover:text-white transition">Projetos</a>
+                <a href="#contato" data-i18n="nav_contact" class="px-4 py-2 rounded-lg border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-cardDark hover:border-indigo-500 dark:hover:border-accentLilac text-slate-900 dark:text-white transition">
+                    Contato
+                </a>
+
+                <!-- Botão Troca de Idioma (PT / EN) -->
+                <button id="lang-toggle" onclick="toggleLanguage()" aria-label="Change Language"
+                        class="px-3 py-2 rounded-lg border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-cardDark hover:border-indigo-500 dark:hover:border-accentLilac text-slate-900 dark:text-white font-mono text-xs font-bold flex items-center gap-1.5 transition"
+                        title="Switch Language (PT / EN)">
+                    <i data-lucide="globe" class="w-4 h-4 text-indigo-600 dark:text-accentLilac"></i>
+                    <span id="lang-label">EN</span>
+                </button>
+
+                <!-- Botão Troca de Tema (Escuro / Claro) -->
+                <button id="theme-toggle" onclick="toggleTheme()" aria-label="Alternar Tema"
+                        class="p-2 rounded-lg border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-cardDark text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white hover:border-indigo-500 dark:hover:border-accentLilac transition"
+                        title="Toggle Dark / Light Mode">
+                    <i id="theme-icon-sun" data-lucide="sun" class="w-4 h-4 hidden text-amber-500"></i>
+                    <i id="theme-icon-moon" data-lucide="moon" class="w-4 h-4 text-indigo-400"></i>
                 </button>
             </nav>
         </div>
     </header>
 
     <main class="max-w-6xl mx-auto px-6">
+
+        <!-- 1. HERO SECTION -->
         <section id="inicio" class="min-h-screen pt-32 pb-20 flex flex-col lg:flex-row items-center justify-between gap-12">
+            <!-- Coluna Esquerda -->
             <div class="lg:w-7/12 space-y-6">
                 <div class="inline-block px-4 py-1.5 rounded-full border border-amber-500/40 bg-amber-500/10">
-                    <span class="font-mono text-xs font-medium text-accentAmber"># Engenheiro de IA e Dados</span>
+                    <span data-i18n="hero_badge" class="font-mono text-xs font-semibold text-amber-700 dark:text-accentAmber">
+                        # Engenheiro de IA e Dados
+                    </span>
                 </div>
-                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.15] text-white">
+
+                <h1 data-i18n="hero_title" class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.15] text-slate-900 dark:text-white">
                     Transformando dados complexos em <span class="text-gradient-amber">Inteligência.</span>
                 </h1>
-                <p class="text-lg text-slate-300 leading-relaxed max-w-xl">
-                    Olá, eu sou <strong class="text-white font-semibold">Jorge Luiz Susin Rodrigues</strong>! Desenvolvo modelos preditivos avançados, orquestro sistemas multiagentes e crio pipelines de machine learning de ponta a ponta — da infraestrutura Linux à API.
+
+                <p data-i18n="hero_bio" class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-xl">
+                    Olá, eu sou <strong class="text-slate-900 dark:text-white font-semibold">Jorge Luiz Susin Rodrigues</strong>! Desenvolvo modelos preditivos avançados, orquestro sistemas multiagentes e crio pipelines de machine learning de ponta a ponta — da infraestrutura Linux à API.
                 </p>
+
                 <div class="pt-4 flex flex-wrap items-center gap-4">
-                    <a href="#projetos" class="px-7 py-3.5 rounded-lg bg-accentLilac hover:bg-indigo-400 text-bgDark font-semibold text-sm transition shadow-lg shadow-indigo-500/20">Ver Projetos</a>
-                    <a href="#contato" class="px-6 py-3.5 rounded-lg border border-borderIndigo bg-cardDark/60 hover:border-slate-500 text-white font-medium text-sm flex items-center gap-2 transition">
-                        <span>Baixar Currículo</span>
+                    <a href="#projetos" data-i18n="hero_btn_projects" class="px-7 py-3.5 rounded-lg bg-indigo-600 dark:bg-accentLilac hover:bg-indigo-500 dark:hover:bg-indigo-400 text-white dark:text-bgDark font-semibold text-sm transition shadow-lg shadow-indigo-500/20">
+                        Ver Projetos
+                    </a>
+                    
+                    <a href="#contato" class="px-6 py-3.5 rounded-lg border border-slate-300 dark:border-borderIndigo bg-white dark:bg-cardDark/60 hover:border-indigo-500 dark:hover:border-slate-500 text-slate-800 dark:text-white font-medium text-sm flex items-center gap-2 transition">
+                        <span data-i18n="hero_btn_cv">Baixar Currículo</span>
                         <i data-lucide="download" class="w-4 h-4"></i>
                     </a>
+
                     <div class="flex items-center gap-3 pl-2">
-                        <a href="https://github.com/JorgeRodrigues2026" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="w-11 h-11 rounded-full border border-borderIndigo bg-cardDark flex items-center justify-center text-slate-300 hover:text-white hover:border-accentLilac transition">
+                        <a href="https://github.com/JorgeRodrigues2026" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+                           class="w-11 h-11 rounded-full border border-slate-300 dark:border-borderIndigo bg-white dark:bg-cardDark flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white hover:border-indigo-500 dark:hover:border-accentLilac transition">
                             <i data-lucide="github" class="w-5 h-5"></i>
                         </a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-11 h-11 rounded-full border border-borderIndigo bg-cardDark flex items-center justify-center text-slate-300 hover:text-white hover:border-accentLilac transition">
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+                           class="w-11 h-11 rounded-full border border-slate-300 dark:border-borderIndigo bg-white dark:bg-cardDark flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white hover:border-indigo-500 dark:hover:border-accentLilac transition">
                             <i data-lucide="linkedin" class="w-5 h-5"></i>
                         </a>
                     </div>
                 </div>
             </div>
 
+            <!-- Coluna Direita (Code Snippet) -->
             <div class="lg:w-5/12 w-full">
                 <div class="code-window rounded-xl p-6 font-mono text-xs sm:text-sm leading-relaxed overflow-x-auto">
                     <div class="flex items-center gap-2 mb-5">
@@ -126,7 +181,7 @@
 <span class="text-accentLilac">from</span> sklearn.metrics <span class="text-accentLilac">import</span> confusion_matrix
 
 <span class="text-accentLilac">def</span> <span class="text-amber-300">evaluate_predictive_model</span>(model, data, labels):
-    <span class="text-slate-400">""" Pipeline de calibração e avaliação """</span>
+    <span data-i18n="code_comment_hero" class="text-slate-400">""" Pipeline de calibração e avaliação """</span>
     model.eval()
     <span class="text-accentLilac">with</span> torch.no_grad():
         preds = model(data)
@@ -141,96 +196,140 @@
             </div>
         </section>
 
-        <section id="sobre" class="py-24 border-t border-borderIndigo/50">
+        <!-- 2. SOBRE MIM -->
+        <section id="sobre" class="py-24 border-t border-slate-200 dark:border-borderIndigo/50">
             <div class="max-w-3xl">
-                <h2 class="text-3xl font-bold text-white mb-2">Sobre Mim</h2>
-                <div class="w-12 h-1 bg-accentLilac rounded mb-8"></div>
-                <div class="space-y-6 text-slate-300 leading-relaxed text-base sm:text-lg">
-                    <p>Sou um profissional focado em <strong class="text-white font-semibold">Inteligência Artificial e Modelagem Preditiva</strong>. Minha base técnica combina o rigor da análise de dados com a engenharia de software para colocar modelos em produção. Possuo sólida experiência no desenvolvimento de sistemas orquestradores multi-agentes, construção de matrizes de confusão e calibração de modelos utilizando frameworks como Scikit-Learn, PyTorch e TensorFlow.</p>
-                    <p>Além da modelagem estatística, tenho forte domínio de infraestrutura, atuando na conteinerização de aplicações com <strong class="text-white font-semibold">Docker</strong>, criação de endpoints de alta performance via <strong class="text-white font-semibold">FastAPI</strong>, administração de ambientes Linux (Ubuntu) e execução de modelos GGUF locais via Ollama e Llamafile.</p>
-                    <p>Estou sempre em busca de desafios que exijam inovação e otimização computacional, aplicando engenharia de dados e visão analítica para transformar métricas complexas em soluções escaláveis e decisões estratégicas de negócio.</p>
+                <h2 data-i18n="about_title" class="text-3xl font-bold text-slate-900 dark:text-white mb-2">Sobre Mim</h2>
+                <div class="w-12 h-1 bg-indigo-600 dark:bg-accentLilac rounded mb-8"></div>
+
+                <div class="space-y-6 text-slate-600 dark:text-slate-300 leading-relaxed text-base sm:text-lg">
+                    <p data-i18n="about_p1">
+                        Sou um profissional focado em <strong class="text-slate-900 dark:text-white font-semibold">Inteligência Artificial e Modelagem Preditiva</strong>. Minha base técnica combina o rigor da análise de dados com a engenharia de software para colocar modelos em produção. Possuo sólida experiência no desenvolvimento de sistemas orquestradores multiagentes, construção de matrizes de confusão e calibração de modelos utilizando frameworks como Scikit-Learn, PyTorch e TensorFlow.
+                    </p>
+                    <p data-i18n="about_p2">
+                        Além da modelagem estatística, tenho forte domínio de infraestrutura, atuando na conteinerização de aplicações com <strong class="text-slate-900 dark:text-white font-semibold">Docker</strong>, criação de endpoints de alta performance via <strong class="text-slate-900 dark:text-white font-semibold">FastAPI</strong>, administração de ambientes Linux (Ubuntu) e execução de modelos GGUF locais via Ollama e Llamafile.
+                    </p>
+                    <p data-i18n="about_p3">
+                        Estou sempre em busca de desafios que exijam inovação e otimização computacional, aplicando engenharia de dados e visão analítica para transformar métricas complexas em soluções escaláveis e decisões estratégicas de negócio.
+                    </p>
                 </div>
+
                 <div class="mt-12">
-                    <h3 class="text-lg font-bold text-white mb-4">Licenças e Certificações</h3>
-                    <ul class="space-y-3 text-sm sm:text-base text-accentLilac">
+                    <h3 data-i18n="cert_title" class="text-lg font-bold text-slate-900 dark:text-white mb-4">Licenças e Certificações</h3>
+                    <ul class="space-y-3 text-sm sm:text-base text-indigo-700 dark:text-accentLilac font-medium">
                         <li class="flex items-center gap-3">
-                            <i data-lucide="award" class="w-5 h-5 text-accentAmber shrink-0"></i>
-                            <span>Análise de Dados Preditiva em IA — SCTEC & SENAI</span>
+                            <i data-lucide="award" class="w-5 h-5 text-amber-500 dark:text-accentAmber shrink-0"></i>
+                            <span data-i18n="cert_1">Análise de Dados Preditiva — SCTEC & SENAI</span>
                         </li>
                         <li class="flex items-center gap-3">
-                            <i data-lucide="award" class="w-5 h-5 text-accentAmber shrink-0"></i>
-                            <span>Prompts e IA Generativa — SCTEC & SENAI</span>
+                            <i data-lucide="award" class="w-5 h-5 text-amber-500 dark:text-accentAmber shrink-0"></i>
+                            <span data-i18n="cert_2">Engenharia de Prompts e IA Generativa — SCTEC & SENAI</span>
                         </li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section id="tech-stack" class="py-24 border-t border-borderIndigo/50">
-            <h2 class="text-3xl font-bold text-white mb-2">Tech Stack & Ferramentas</h2>
-            <div class="w-12 h-1 bg-accentLilac rounded mb-12"></div>
+        <!-- 3. TECH STACK & FERRAMENTAS -->
+        <section id="tech-stack" class="py-24 border-t border-slate-200 dark:border-borderIndigo/50">
+            <h2 data-i18n="stack_title" class="text-3xl font-bold text-slate-900 dark:text-white mb-2">Tech Stack & Ferramentas</h2>
+            <div class="w-12 h-1 bg-indigo-600 dark:bg-accentLilac rounded mb-12"></div>
+
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-                <div class="skill-card rounded-xl p-6 flex flex-col justify-between h-48">
-                    <div class="text-accentLilac"><i data-lucide="brain-circuit" class="w-9 h-9"></i></div>
+                <!-- Card 1 -->
+                <div class="skill-card rounded-xl p-6 flex flex-col justify-between h-48 bg-white dark:bg-[#0a0524] border border-slate-200 dark:border-borderIndigo shadow-sm">
+                    <div class="text-indigo-600 dark:text-accentLilac">
+                        <i data-lucide="brain-circuit" class="w-9 h-9"></i>
+                    </div>
                     <div>
-                        <h3 class="font-bold text-white text-base mb-1">Modelagem & IA</h3>
-                        <p class="text-xs text-slate-400 font-mono">(Scikit-Learn, PyTorch, TensorFlow)</p>
+                        <h3 data-i18n="stack_c1_title" class="font-bold text-slate-900 dark:text-white text-base mb-1">Modelagem & IA</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">(Scikit-Learn, PyTorch, TensorFlow)</p>
                     </div>
                 </div>
-                <div class="skill-card rounded-xl p-6 flex flex-col justify-between h-48">
-                    <div class="text-accentLilac"><i data-lucide="file-code-2" class="w-9 h-9"></i></div>
+
+                <!-- Card 2 -->
+                <div class="skill-card rounded-xl p-6 flex flex-col justify-between h-48 bg-white dark:bg-[#0a0524] border border-slate-200 dark:border-borderIndigo shadow-sm">
+                    <div class="text-indigo-600 dark:text-accentLilac">
+                        <i data-lucide="file-code-2" class="w-9 h-9"></i>
+                    </div>
                     <div>
-                        <h3 class="font-bold text-white text-base mb-1">Python & APIs</h3>
-                        <p class="text-xs text-slate-400 font-mono">(FastAPI, Multiprocessing, REST)</p>
+                        <h3 data-i18n="stack_c2_title" class="font-bold text-slate-900 dark:text-white text-base mb-1">Python & APIs</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">(FastAPI, Multiprocessing, REST)</p>
                     </div>
                 </div>
-                <div class="skill-card rounded-xl p-6 flex flex-col justify-between h-48">
-                    <div class="text-accentLilac"><i data-lucide="database" class="w-9 h-9"></i></div>
+
+                <!-- Card 3 -->
+                <div class="skill-card rounded-xl p-6 flex flex-col justify-between h-48 bg-white dark:bg-[#0a0524] border border-slate-200 dark:border-borderIndigo shadow-sm">
+                    <div class="text-indigo-600 dark:text-accentLilac">
+                        <i data-lucide="database" class="w-9 h-9"></i>
+                    </div>
                     <div>
-                        <h3 class="font-bold text-white text-base mb-1">LLMs & Vetores</h3>
-                        <p class="text-xs text-slate-400 font-mono">(Ollama, Llamafile, ChromaDB, GGUF)</p>
+                        <h3 data-i18n="stack_c3_title" class="font-bold text-slate-900 dark:text-white text-base mb-1">LLMs & Vetores</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">(Ollama, Llamafile, ChromaDB, GGUF)</p>
                     </div>
                 </div>
-                <div class="skill-card rounded-xl p-6 flex flex-col justify-between h-48">
-                    <div class="text-accentLilac"><i data-lucide="terminal" class="w-9 h-9"></i></div>
+
+                <!-- Card 4 -->
+                <div class="skill-card rounded-xl p-6 flex flex-col justify-between h-48 bg-white dark:bg-[#0a0524] border border-slate-200 dark:border-borderIndigo shadow-sm">
+                    <div class="text-indigo-600 dark:text-accentLilac">
+                        <i data-lucide="terminal" class="w-9 h-9"></i>
+                    </div>
                     <div>
-                        <h3 class="font-bold text-white text-base mb-1">Infra & Deploy</h3>
-                        <p class="text-xs text-slate-400 font-mono">(Docker, Ubuntu Linux, CLI)</p>
+                        <h3 data-i18n="stack_c4_title" class="font-bold text-slate-900 dark:text-white text-base mb-1">Infra & Deploy</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">(Docker, Ubuntu Linux, CLI)</p>
                     </div>
                 </div>
-                <div class="skill-card rounded-xl p-6 flex flex-col justify-between h-48">
-                    <div class="text-accentLilac"><i data-lucide="filter" class="w-9 h-9"></i></div>
+
+                <!-- Card 5 -->
+                <div class="skill-card rounded-xl p-6 flex flex-col justify-between h-48 bg-white dark:bg-[#0a0524] border border-slate-200 dark:border-borderIndigo shadow-sm">
+                    <div class="text-indigo-600 dark:text-accentLilac">
+                        <i data-lucide="filter" class="w-9 h-9"></i>
+                    </div>
                     <div>
-                        <h3 class="font-bold text-white text-base mb-1">Pipelines & 3D</h3>
-                        <p class="text-xs text-slate-400 font-mono">(ETL, Kaggle, MCP, Blender Nodes)</p>
+                        <h3 data-i18n="stack_c5_title" class="font-bold text-slate-900 dark:text-white text-base mb-1">Pipelines & 3D</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">(ETL, Kaggle, MCP, Blender Nodes)</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="projetos" class="py-24 border-t border-borderIndigo/50">
-            <h2 class="text-3xl font-bold text-white mb-2">Projetos em Destaque</h2>
-            <div class="w-12 h-1 bg-accentLilac rounded mb-12"></div>
+        <!-- 4. PROJETOS EM DESTAQUE -->
+        <section id="projetos" class="py-24 border-t border-slate-200 dark:border-borderIndigo/50">
+            <h2 data-i18n="proj_section_title" class="text-3xl font-bold text-slate-900 dark:text-white mb-2">Projetos em Destaque</h2>
+            <div class="w-12 h-1 bg-indigo-600 dark:bg-accentLilac rounded mb-12"></div>
+
             <div class="space-y-12">
-                <div class="rounded-2xl bg-cardDark/90 border border-borderIndigo p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+                <!-- PROJETO 1: Mega_Jarvis -->
+                <div class="rounded-2xl bg-white dark:bg-cardDark/90 border border-slate-200 dark:border-borderIndigo shadow-md p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     <div class="lg:col-span-6 space-y-5">
-                        <h3 class="text-2xl font-bold text-white">Mega_Jarvis — Orquestrador Multiagente</h3>
-                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed"><strong class="text-white">Desafio:</strong> Criação de um sistema robusto para gestão e orquestração de múltiplos agentes de IA locais, integrando recuperação de documentos (RAG) com baixa latência e privacidade total.</p>
-                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed"><strong class="text-white">Arquitetura:</strong> Aplicação construída com integração direta ao ChromaDB para armazenamento vetorial e busca semântica, executando modelos GGUF locais via Ollama e Llamafile. Empacotado em containers Docker com endpoints FastAPI.</p>
+                        <h3 data-i18n="p1_title" class="text-2xl font-bold text-slate-900 dark:text-white">
+                            Mega_Jarvis — Orquestrador Multiagente
+                        </h3>
+                        <p data-i18n="p1_challenge" class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+                            <strong class="text-slate-900 dark:text-white">Desafio:</strong> Criação de um sistema robusto para gestão e orquestração de múltiplos agentes de IA locais, integrando recuperação de documentos (RAG) com baixa latência e privacidade total.
+                        </p>
+                        <p data-i18n="p1_arch" class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+                            <strong class="text-slate-900 dark:text-white">Arquitetura:</strong> Aplicação construída com integração direta ao ChromaDB para armazenamento vetorial e busca semântica, executando modelos GGUF locais via Ollama e Llamafile. Empacotado em containers Docker com endpoints FastAPI.
+                        </p>
+
                         <div class="flex flex-wrap gap-2 pt-2">
-                            <span class="px-3 py-1 rounded border border-borderIndigo bg-bgDark text-xs font-mono text-accentLilac">Python</span>
-                            <span class="px-3 py-1 rounded border border-borderIndigo bg-bgDark text-xs font-mono text-accentLilac">ChromaDB</span>
-                            <span class="px-3 py-1 rounded border border-borderIndigo bg-bgDark text-xs font-mono text-accentLilac">FastAPI</span>
-                            <span class="px-3 py-1 rounded border border-borderIndigo bg-bgDark text-xs font-mono text-accentLilac">Docker</span>
-                            <span class="px-3 py-1 rounded border border-borderIndigo bg-bgDark text-xs font-mono text-accentLilac">Ollama</span>
+                            <span class="px-3 py-1 rounded border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-bgDark text-xs font-mono text-indigo-700 dark:text-accentLilac">Python</span>
+                            <span class="px-3 py-1 rounded border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-bgDark text-xs font-mono text-indigo-700 dark:text-accentLilac">ChromaDB</span>
+                            <span class="px-3 py-1 rounded border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-bgDark text-xs font-mono text-indigo-700 dark:text-accentLilac">FastAPI</span>
+                            <span class="px-3 py-1 rounded border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-bgDark text-xs font-mono text-indigo-700 dark:text-accentLilac">Docker</span>
+                            <span class="px-3 py-1 rounded border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-bgDark text-xs font-mono text-indigo-700 dark:text-accentLilac">Ollama</span>
                         </div>
+
                         <div class="pt-3">
-                            <a href="https://github.com/JorgeRodrigues2026" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-accentLilac hover:text-white transition">
-                                <span>Ver no GitHub</span>
+                            <a href="https://github.com/JorgeRodrigues2026" target="_blank" rel="noopener noreferrer"
+                               class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 dark:text-accentLilac hover:text-indigo-800 dark:hover:text-white transition">
+                                <span data-i18n="view_github">Ver no GitHub</span>
                                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </a>
                         </div>
                     </div>
+
                     <div class="lg:col-span-6">
                         <div class="code-window rounded-xl p-5 font-mono text-xs leading-relaxed overflow-x-auto">
                             <div class="flex items-center gap-2 mb-4">
@@ -253,25 +352,36 @@
                     </div>
                 </div>
 
-                <div class="rounded-2xl bg-cardDark/90 border border-borderIndigo p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- PROJETO 2: Salesinsight (Cenário 3 Anos) -->
+                <div class="rounded-2xl bg-white dark:bg-cardDark/90 border border-slate-200 dark:border-borderIndigo shadow-md p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     <div class="lg:col-span-6 space-y-5">
-                        <h3 class="text-2xl font-bold text-white">Sales Insight — Projeção e Análise de Cenários (3 Anos)</h3>
-                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed"><strong class="text-white">Desafio:</strong> Processar e analisar um histórico complexo de 3 anos de dados comerciais para identificar padrões de consumo, prever tendências de mercado e apoiar a tomada de decisão estratégica com base em múltiplos cenários projetados.</p>
-                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed"><strong class="text-white">Arquitetura:</strong> Desenvolvimento de um pipeline analítico de ponta a ponta integrando extração e limpeza de dados (ETL), análise exploratória profunda e modelagem preditiva em Python, traduzindo métricas técnicas em indicadores acionáveis.</p>
+                        <h3 data-i18n="p2_title" class="text-2xl font-bold text-slate-900 dark:text-white">
+                            Sales Insight — Projeção e Análise de Cenários (3 Anos)
+                        </h3>
+                        <p data-i18n="p2_challenge" class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+                            <strong class="text-slate-900 dark:text-white">Desafio:</strong> Processar e analisar um histórico complexo de 3 anos de dados comerciais para identificar padrões de consumo, prever tendências de mercado e apoiar a tomada de decisão estratégica com base em múltiplos cenários projetados.
+                        </p>
+                        <p data-i18n="p2_arch" class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+                            <strong class="text-slate-900 dark:text-white">Arquitetura:</strong> Desenvolvimento de um pipeline analítico de ponta a ponta integrando extração e limpeza de dados (ETL), análise exploratória profunda e modelagem preditiva em Python, traduzindo métricas técnicas em indicadores acionáveis.
+                        </p>
+
                         <div class="flex flex-wrap gap-2 pt-2">
-                            <span class="px-3 py-1 rounded border border-borderIndigo bg-bgDark text-xs font-mono text-accentLilac">Python</span>
-                            <span class="px-3 py-1 rounded border border-borderIndigo bg-bgDark text-xs font-mono text-accentLilac">Predictive Modeling</span>
-                            <span class="px-3 py-1 rounded border border-borderIndigo bg-bgDark text-xs font-mono text-accentLilac">Data Analysis</span>
-                            <span class="px-3 py-1 rounded border border-borderIndigo bg-bgDark text-xs font-mono text-accentLilac">ETL</span>
-                            <span class="px-3 py-1 rounded border border-borderIndigo bg-bgDark text-xs font-mono text-accentLilac">BI</span>
+                            <span class="px-3 py-1 rounded border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-bgDark text-xs font-mono text-indigo-700 dark:text-accentLilac">Python</span>
+                            <span class="px-3 py-1 rounded border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-bgDark text-xs font-mono text-indigo-700 dark:text-accentLilac">Predictive Modeling</span>
+                            <span class="px-3 py-1 rounded border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-bgDark text-xs font-mono text-indigo-700 dark:text-accentLilac">Data Analysis</span>
+                            <span class="px-3 py-1 rounded border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-bgDark text-xs font-mono text-indigo-700 dark:text-accentLilac">ETL</span>
+                            <span class="px-3 py-1 rounded border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-bgDark text-xs font-mono text-indigo-700 dark:text-accentLilac">BI</span>
                         </div>
+
                         <div class="pt-3">
-                            <a href="https://github.com/JorgeRodrigues2026/salesinsight_Cenario_3_anos" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-accentLilac hover:text-white transition">
-                                <span>Ver no GitHub</span>
+                            <a href="https://github.com/JorgeRodrigues2026/salesinsight_Cenario_3_anos" target="_blank" rel="noopener noreferrer"
+                               class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 dark:text-accentLilac hover:text-indigo-800 dark:hover:text-white transition">
+                                <span data-i18n="view_github">Ver no GitHub</span>
                                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </a>
                         </div>
                     </div>
+
                     <div class="lg:col-span-6">
                         <div class="code-window rounded-xl p-5 font-mono text-xs leading-relaxed overflow-x-auto">
                             <div class="flex items-center gap-2 mb-4">
@@ -280,7 +390,7 @@
                                 <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
                             </div>
                             <pre class="text-slate-200"><code><span class="text-accentLilac">def</span> <span class="text-amber-300">forecast_3yr_scenarios</span>(df_sales, horizon=<span class="text-amber-400">36</span>):
-    <span class="text-slate-400"># Extração de sazonalidade e tendência trienal</span>
+    <span data-i18n="code_comment_p2" class="text-slate-400"># Extração de sazonalidade e tendência trienal</span>
     features = build_temporal_features(df_sales)
     model = GradientBoostingRegressor(n_estimators=<span class="text-amber-400">500</span>)
     model.fit(features.X_train, features.y_train)
@@ -294,24 +404,35 @@
                     </div>
                 </div>
 
-                <div class="rounded-2xl bg-cardDark/90 border border-borderIndigo p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- PROJETO 3: Pipeline Químico Kaggle -->
+                <div class="rounded-2xl bg-white dark:bg-cardDark/90 border border-slate-200 dark:border-borderIndigo shadow-md p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     <div class="lg:col-span-6 space-y-5">
-                        <h3 class="text-2xl font-bold text-white">Pipeline de Cálculos Químicos & Multiprocessamento</h3>
-                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed"><strong class="text-white">Desafio:</strong> Otimizar o processamento de bases volumosas de estruturas químicas em ambientes de competição (Kaggle) com restrições severas de tempo de execução e sem acesso à internet.</p>
-                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed"><strong class="text-white">Arquitetura:</strong> Configuração de dependências offline via pacotes <em>wheels</em> e arquitetura de execução paralela em múltiplos núcleos de CPU, reduzindo drasticamente o tempo de inferência e extração de descritores moleculares.</p>
+                        <h3 data-i18n="p3_title" class="text-2xl font-bold text-slate-900 dark:text-white">
+                            Pipeline de Cálculos Químicos & Multiprocessamento
+                        </h3>
+                        <p data-i18n="p3_challenge" class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+                            <strong class="text-slate-900 dark:text-white">Desafio:</strong> Otimizar o processamento de bases volumosas de estruturas químicas em ambientes de competição (Kaggle) com restrições severas de tempo de execução e sem acesso à internet.
+                        </p>
+                        <p data-i18n="p3_arch" class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+                            <strong class="text-slate-900 dark:text-white">Arquitetura:</strong> Configuração de dependências offline via pacotes <em>wheels</em> e arquitetura de execução paralela em múltiplos núcleos de CPU, reduzindo drasticamente o tempo de inferência e extração de descritores moleculares.
+                        </p>
+
                         <div class="flex flex-wrap gap-2 pt-2">
-                            <span class="px-3 py-1 rounded border border-borderIndigo bg-bgDark text-xs font-mono text-accentLilac">Kaggle</span>
-                            <span class="px-3 py-1 rounded border border-borderIndigo bg-bgDark text-xs font-mono text-accentLilac">Multiprocessing</span>
-                            <span class="px-3 py-1 rounded border border-borderIndigo bg-bgDark text-xs font-mono text-accentLilac">Data Pipeline</span>
-                            <span class="px-3 py-1 rounded border border-borderIndigo bg-bgDark text-xs font-mono text-accentLilac">Offline Wheels</span>
+                            <span class="px-3 py-1 rounded border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-bgDark text-xs font-mono text-indigo-700 dark:text-accentLilac">Kaggle</span>
+                            <span class="px-3 py-1 rounded border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-bgDark text-xs font-mono text-indigo-700 dark:text-accentLilac">Multiprocessing</span>
+                            <span class="px-3 py-1 rounded border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-bgDark text-xs font-mono text-indigo-700 dark:text-accentLilac">Data Pipeline</span>
+                            <span class="px-3 py-1 rounded border border-slate-300 dark:border-borderIndigo bg-slate-100 dark:bg-bgDark text-xs font-mono text-indigo-700 dark:text-accentLilac">Offline Wheels</span>
                         </div>
+
                         <div class="pt-3">
-                            <a href="https://github.com/JorgeRodrigues2026" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-accentLilac hover:text-white transition">
-                                <span>Ver no GitHub</span>
+                            <a href="https://github.com/JorgeRodrigues2026" target="_blank" rel="noopener noreferrer"
+                               class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 dark:text-accentLilac hover:text-indigo-800 dark:hover:text-white transition">
+                                <span data-i18n="view_github">Ver no GitHub</span>
                                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </a>
                         </div>
                     </div>
+
                     <div class="lg:col-span-6">
                         <div class="code-window rounded-xl p-5 font-mono text-xs leading-relaxed overflow-x-auto">
                             <div class="flex items-center gap-2 mb-4">
@@ -322,7 +443,7 @@
                             <pre class="text-slate-200"><code><span class="text-accentLilac">from</span> concurrent.futures <span class="text-accentLilac">import</span> ProcessPoolExecutor
 
 <span class="text-accentLilac">def</span> <span class="text-amber-300">parallel_structure_compute</span>(molecules, workers=<span class="text-amber-400">4</span>):
-    <span class="text-slate-400"># Execução paralela otimizada para CPU</span>
+    <span data-i18n="code_comment_p3" class="text-slate-400"># Execução paralela otimizada para CPU</span>
     <span class="text-accentLilac">with</span> ProcessPoolExecutor(max_workers=workers) <span class="text-accentLilac">as</span> executor:
         results = <span class="text-amber-300">list</span>(
             executor.map(compute_molecular_graph, molecules)
@@ -331,62 +452,257 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
-        <section id="contato" class="py-24 border-t border-borderIndigo/50">
-            <h2 class="text-3xl font-bold text-white mb-2">Vamos Construir?</h2>
-            <div class="w-12 h-1 bg-accentLilac rounded mb-12"></div>
+        <!-- 5. CONTATO -->
+        <section id="contato" class="py-24 border-t border-slate-200 dark:border-borderIndigo/50">
+            <h2 data-i18n="contact_title" class="text-3xl font-bold text-slate-900 dark:text-white mb-2">Vamos Construir?</h2>
+            <div class="w-12 h-1 bg-indigo-600 dark:bg-accentLilac rounded mb-12"></div>
+
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <!-- Coluna Esquerda -->
                 <div class="lg:col-span-5 space-y-6">
-                    <p class="text-slate-300 leading-relaxed text-base sm:text-lg">
+                    <p data-i18n="contact_desc" class="text-slate-600 dark:text-slate-300 leading-relaxed text-base sm:text-lg">
                         Necessitando de inteligência artificial aplicada, orquestração de agentes ou estruturação de novos pipelines preditivos para a sua equipe? Envie um e-mail para agendarmos uma entrevista técnica ou me chame no WhatsApp!
                     </p>
+
                     <div class="space-y-4 pt-2">
-                        <a href="mailto:supervisorjorgerodrigues@gmail.com" class="flex items-center gap-4 p-5 rounded-xl bg-cardDark border border-borderIndigo hover:border-accentLilac transition">
-                            <i data-lucide="mail" class="w-5 h-5 text-accentLilac shrink-0"></i>
-                            <span class="text-white font-medium text-sm sm:text-base">supervisorjorgerodrigues@gmail.com</span>
+                        <!-- Card Email -->
+                        <a href="mailto:supervisorjorgerodrigues@gmail.com"
+                           class="flex items-center gap-4 p-5 rounded-xl bg-white dark:bg-cardDark border border-slate-200 dark:border-borderIndigo hover:border-indigo-500 dark:hover:border-accentLilac shadow-sm transition">
+                            <i data-lucide="mail" class="w-5 h-5 text-indigo-600 dark:text-accentLilac shrink-0"></i>
+                            <span class="text-slate-900 dark:text-white font-medium text-sm sm:text-base break-all">supervisorjorgerodrigues@gmail.com</span>
                         </a>
-                        <a href="https://wa.me/5554996473026" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-5 rounded-xl bg-cardDark border border-amber-500/60 hover:border-accentAmber transition">
-                            <i data-lucide="message-circle" class="w-5 h-5 text-accentAmber shrink-0"></i>
-                            <span class="text-white font-medium text-sm sm:text-base">(54) 99647-3026</span>
+
+                        <!-- Card WhatsApp -->
+                        <a href="https://wa.me/5554996473026" target="_blank" rel="noopener noreferrer"
+                           class="flex items-center gap-4 p-5 rounded-xl bg-white dark:bg-cardDark border border-amber-500/60 hover:border-amber-500 dark:hover:border-accentAmber shadow-sm transition">
+                            <i data-lucide="message-circle" class="w-5 h-5 text-amber-500 dark:text-accentAmber shrink-0"></i>
+                            <span class="text-slate-900 dark:text-white font-medium text-sm sm:text-base">+55 (54) 99647-3026</span>
                         </a>
                     </div>
                 </div>
 
+                <!-- Coluna Direita (Formulário integrado com Formspree) -->
                 <div class="lg:col-span-7">
                     <form action="https://formspree.io/f/mljjrvgn" method="POST" class="space-y-5">
                         <div>
-                            <label for="nome" class="block text-sm font-medium text-slate-300 mb-2">Nome da Empresa / Recrutador</label>
-                            <input type="text" id="nome" name="name" required placeholder="Como posso te chamar?" class="w-full px-4 py-3.5 rounded-lg bg-cardDark border border-borderIndigo text-white placeholder-slate-500 focus:outline-none focus:border-accentLilac transition text-sm">
+                            <label for="nome" data-i18n="form_name_label" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                                Nome da Empresa / Recrutador
+                            </label>
+                            <input type="text" id="nome" name="name" required
+                                   data-i18n-placeholder="form_name_ph"
+                                   placeholder="Como posso te chamar?"
+                                   class="w-full px-4 py-3.5 rounded-lg bg-white dark:bg-cardDark border border-slate-300 dark:border-borderIndigo text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-indigo-500 dark:focus:border-accentLilac transition text-sm">
                         </div>
+
                         <div>
-                            <label for="email" class="block text-sm font-medium text-slate-300 mb-2">E-mail corporativo</label>
-                            <input type="email" id="email" name="email" required placeholder="seu@email.com" class="w-full px-4 py-3.5 rounded-lg bg-cardDark border border-borderIndigo text-white placeholder-slate-500 focus:outline-none focus:border-accentLilac transition text-sm">
+                            <label for="email" data-i18n="form_email_label" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                                E-mail corporativo
+                            </label>
+                            <input type="email" id="email" name="email" required
+                                   data-i18n-placeholder="form_email_ph"
+                                   placeholder="seu@email.com"
+                                   class="w-full px-4 py-3.5 rounded-lg bg-white dark:bg-cardDark border border-slate-300 dark:border-borderIndigo text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-indigo-500 dark:focus:border-accentLilac transition text-sm">
                         </div>
+
                         <div>
-                            <label for="mensagem" class="block text-sm font-medium text-slate-300 mb-2">Mensagem sobre a vaga ou projeto</label>
-                            <textarea id="mensagem" name="message" rows="4" required placeholder="Conte-me um pouco sobre a vaga, projeto ou escopo..." class="w-full px-4 py-3.5 rounded-lg bg-cardDark border border-borderIndigo text-white placeholder-slate-500 focus:outline-none focus:border-accentLilac transition text-sm"></textarea>
+                            <label for="mensagem" data-i18n="form_msg_label" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                                Mensagem sobre a vaga ou projeto
+                            </label>
+                            <textarea id="mensagem" name="message" rows="4" required
+                                      data-i18n-placeholder="form_msg_ph"
+                                      placeholder="Conte-me um pouco sobre a vaga, projeto ou escopo..."
+                                      class="w-full px-4 py-3.5 rounded-lg bg-white dark:bg-cardDark border border-slate-300 dark:border-borderIndigo text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-indigo-500 dark:focus:border-accentLilac transition text-sm"></textarea>
                         </div>
-                        <button type="submit" class="w-full py-4 rounded-lg bg-accentLilac hover:bg-indigo-400 text-bgDark font-bold text-sm flex items-center justify-center gap-2 transition shadow-lg shadow-indigo-500/20">
-                            <span>Enviar Mensagem</span>
+
+                        <button type="submit"
+                                class="w-full py-4 rounded-lg bg-indigo-600 dark:bg-accentLilac hover:bg-indigo-500 dark:hover:bg-indigo-400 text-white dark:text-bgDark font-bold text-sm flex items-center justify-center gap-2 transition shadow-lg shadow-indigo-500/20">
+                            <span data-i18n="form_submit">Enviar Mensagem</span>
                             <i data-lucide="send" class="w-4 h-4"></i>
                         </button>
                     </form>
                 </div>
             </div>
         </section>
+
     </main>
 
-    <footer class="border-t border-borderIndigo py-8 mt-12">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-slate-400">
-            <div class="font-mono text-white font-semibold">{ log.info('jorge-luiz') }</div>
-            <div>© 2026 Jorge Luiz Susin Rodrigues. Todos os direitos reservados.</div>
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 dark:border-borderIndigo py-8 mt-12">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+            <div class="font-mono text-slate-900 dark:text-white font-semibold">
+                { log.info('jorge-luiz') }
+            </div>
+            <div data-i18n="footer_rights">
+                © 2026 Jorge Luiz Susin Rodrigues. Todos os direitos reservados.
+            </div>
         </div>
     </footer>
 
+    <!-- Script de Ícones, Tema (Dark/Light) e Tradução (PT/EN) -->
     <script>
         lucide.createIcons();
+
+        const translations = {
+            pt: {
+                nav_home: "Início",
+                nav_about: "Sobre",
+                nav_stack: "Tech Stack",
+                nav_projects: "Projetos",
+                nav_contact: "Contato",
+                hero_badge: "# Engenheiro de IA e Dados",
+                hero_title: 'Transformando dados complexos em <span class="text-gradient-amber">Inteligência.</span>',
+                hero_bio: 'Olá, eu sou <strong class="text-slate-900 dark:text-white font-semibold">Jorge Luiz Susin Rodrigues</strong>! Desenvolvo modelos preditivos avançados, orquestro sistemas multiagentes e crio pipelines de machine learning de ponta a ponta — da infraestrutura Linux à API.',
+                hero_btn_projects: "Ver Projetos",
+                hero_btn_cv: "Baixar Currículo",
+                code_comment_hero: '""" Pipeline de calibração e avaliação """',
+                about_title: "Sobre Mim",
+                about_p1: 'Sou um profissional focado em <strong class="text-slate-900 dark:text-white font-semibold">Inteligência Artificial e Modelagem Preditiva</strong>. Minha base técnica combina o rigor da análise de dados com a engenharia de software para colocar modelos em produção. Possuo sólida experiência no desenvolvimento de sistemas orquestradores multiagentes, construção de matrizes de confusão e calibração de modelos utilizando frameworks como Scikit-Learn, PyTorch e TensorFlow.',
+                about_p2: 'Além da modelagem estatística, tenho forte domínio de infraestrutura, atuando na conteinerização de aplicações com <strong class="text-slate-900 dark:text-white font-semibold">Docker</strong>, criação de endpoints de alta performance via <strong class="text-slate-900 dark:text-white font-semibold">FastAPI</strong>, administração de ambientes Linux (Ubuntu) e execução de modelos GGUF locais via Ollama e Llamafile.',
+                about_p3: 'Estou sempre em busca de desafios que exijam inovação e otimização computacional, aplicando engenharia de dados e visão analítica para transformar métricas complexas em soluções escaláveis e decisões estratégicas de negócio.',
+                cert_title: "Licenças e Certificações",
+                cert_1: "Análise de Dados Preditiva — SCTEC & SENAI",
+                cert_2: "Engenharia de Prompts e IA Generativa — SCTEC & SENAI",
+                stack_title: "Tech Stack & Ferramentas",
+                stack_c1_title: "Modelagem & IA",
+                stack_c2_title: "Python & APIs",
+                stack_c3_title: "LLMs & Vetores",
+                stack_c4_title: "Infra & Deploy",
+                stack_c5_title: "Pipelines & 3D",
+                proj_section_title: "Projetos em Destaque",
+                p1_title: "Mega_Jarvis — Orquestrador Multiagente",
+                p1_challenge: '<strong class="text-slate-900 dark:text-white">Desafio:</strong> Criação de um sistema robusto para gestão e orquestração de múltiplos agentes de IA locais, integrando recuperação de documentos (RAG) com baixa latência e privacidade total.',
+                p1_arch: '<strong class="text-slate-900 dark:text-white">Arquitetura:</strong> Aplicação construída com integração direta ao ChromaDB para armazenamento vetorial e busca semântica, executando modelos GGUF locais via Ollama e Llamafile. Empacotado em containers Docker com endpoints FastAPI.',
+                p2_title: "Sales Insight — Projeção e Análise de Cenários (3 Anos)",
+                p2_challenge: '<strong class="text-slate-900 dark:text-white">Desafio:</strong> Processar e analisar um histórico complexo de 3 anos de dados comerciais para identificar padrões de consumo, prever tendências de mercado e apoiar a tomada de decisão estratégica com base em múltiplos cenários projetados.',
+                p2_arch: '<strong class="text-slate-900 dark:text-white">Arquitetura:</strong> Desenvolvimento de um pipeline analítico de ponta a ponta integrando extração e limpeza de dados (ETL), análise exploratória profunda e modelagem preditiva em Python, traduzindo métricas técnicas em indicadores acionáveis.',
+                code_comment_p2: "# Extração de sazonalidade e tendência trienal",
+                p3_title: "Pipeline de Cálculos Químicos & Multiprocessamento",
+                p3_challenge: '<strong class="text-slate-900 dark:text-white">Desafio:</strong> Otimizar o processamento de bases volumosas de estruturas químicas em ambientes de competição (Kaggle) com restrições severas de tempo de execução e sem acesso à internet.',
+                p3_arch: '<strong class="text-slate-900 dark:text-white">Arquitetura:</strong> Configuração de dependências offline via pacotes <em>wheels</em> e arquitetura de execução paralela em múltiplos núcleos de CPU, reduzindo drasticamente o tempo de inferência e extração de descritores moleculares.',
+                code_comment_p3: "# Execução paralela otimizada para CPU",
+                view_github: "Ver no GitHub",
+                contact_title: "Vamos Construir?",
+                contact_desc: "Necessitando de inteligência artificial aplicada, orquestração de agentes ou estruturação de novos pipelines preditivos para a sua equipe? Envie um e-mail para agendarmos uma entrevista técnica ou me chame no WhatsApp!",
+                form_name_label: "Nome da Empresa / Recrutador",
+                form_name_ph: "Como posso te chamar?",
+                form_email_label: "E-mail corporativo",
+                form_email_ph: "seu@email.com",
+                form_msg_label: "Mensagem sobre a vaga ou projeto",
+                form_msg_ph: "Conte-me um pouco sobre a vaga, projeto ou escopo...",
+                form_submit: "Enviar Mensagem",
+                footer_rights: "© 2026 Jorge Luiz Susin Rodrigues. Todos os direitos reservados."
+            },
+            en: {
+                nav_home: "Home",
+                nav_about: "About",
+                nav_stack: "Tech Stack",
+                nav_projects: "Projects",
+                nav_contact: "Contact",
+                hero_badge: "# AI & Data Engineer",
+                hero_title: 'Transforming complex data into <span class="text-gradient-amber">Intelligence.</span>',
+                hero_bio: 'Hi, I am <strong class="text-slate-900 dark:text-white font-semibold">Jorge Luiz Susin Rodrigues</strong>! I build advanced predictive models, orchestrate multi-agent systems, and engineer end-to-end machine learning pipelines — from Linux infrastructure to production APIs.',
+                hero_btn_projects: "View Projects",
+                hero_btn_cv: "Download Resume",
+                code_comment_hero: '""" Calibration and evaluation pipeline """',
+                about_title: "About Me",
+                about_p1: 'I am a professional focused on <strong class="text-slate-900 dark:text-white font-semibold">Artificial Intelligence and Predictive Modeling</strong>. My technical foundation combines rigorous data analysis with software engineering to deploy reliable models into production. I have hands-on experience designing multi-agent orchestrator systems, building confusion matrices, and calibrating models using Scikit-Learn, PyTorch, and TensorFlow.',
+                about_p2: 'Beyond statistical modeling, I have strong infrastructure expertise, working with application containerization via <strong class="text-slate-900 dark:text-white font-semibold">Docker</strong>, high-performance API endpoints with <strong class="text-slate-900 dark:text-white font-semibold">FastAPI</strong>, Linux (Ubuntu) system administration, and local GGUF model execution via Ollama and Llamafile.',
+                about_p3: 'I am constantly seeking challenges that demand innovation and computational optimization, applying data engineering and analytical vision to turn complex metrics into scalable solutions and strategic business decisions.',
+                cert_title: "Licenses & Certifications",
+                cert_1: "Predictive Data Analysis — SCTEC & SENAI",
+                cert_2: "Prompt Engineering & Generative AI — SCTEC & SENAI",
+                stack_title: "Tech Stack & Tools",
+                stack_c1_title: "Modeling & AI",
+                stack_c2_title: "Python & APIs",
+                stack_c3_title: "LLMs & Vectors",
+                stack_c4_title: "Infra & Deploy",
+                stack_c5_title: "Pipelines & 3D",
+                proj_section_title: "Featured Projects",
+                p1_title: "Mega_Jarvis — Multi-Agent Orchestrator",
+                p1_challenge: '<strong class="text-slate-900 dark:text-white">Challenge:</strong> Build a robust system for managing and orchestrating multiple local AI agents, integrating document retrieval (RAG) with low latency and complete data privacy.',
+                p1_arch: '<strong class="text-slate-900 dark:text-white">Architecture:</strong> Application built with direct ChromaDB integration for vector storage and semantic search, running local GGUF models via Ollama and Llamafile. Packaged in Docker containers with FastAPI endpoints.',
+                p2_title: "Sales Insight — 3-Year Scenario Forecasting & Analytics",
+                p2_challenge: '<strong class="text-slate-900 dark:text-white">Challenge:</strong> Process and analyze a complex 3-year commercial dataset to identify consumption patterns, forecast market trends, and support executive decision-making across multiple projected scenarios.',
+                p2_arch: '<strong class="text-slate-900 dark:text-white">Architecture:</strong> End-to-end analytical pipeline integrating data extraction and cleaning (ETL), deep exploratory data analysis, and predictive modeling in Python — translating technical metrics into actionable KPIs.',
+                code_comment_p2: "# Triennial seasonality and trend extraction",
+                p3_title: "Chemical Structure Pipeline & Multiprocessing",
+                p3_challenge: '<strong class="text-slate-900 dark:text-white">Challenge:</strong> Optimize the processing of massive chemical structure datasets in competitive environments (Kaggle) under strict runtime constraints and no internet access.',
+                p3_arch: '<strong class="text-slate-900 dark:text-white">Architecture:</strong> Configured offline dependencies via wheel packages and engineered a multi-core CPU parallel execution pipeline, drastically reducing inference time and molecular descriptor extraction.',
+                code_comment_p3: "# CPU-optimized parallel execution",
+                view_github: "View on GitHub",
+                contact_title: "Let's Build Together?",
+                contact_desc: "Looking for applied artificial intelligence, multi-agent orchestration, or predictive pipelines for your team? Send an email to schedule a technical interview or reach out via WhatsApp!",
+                form_name_label: "Company / Recruiter Name",
+                form_name_ph: "How should I address you?",
+                form_email_label: "Corporate Email",
+                form_email_ph: "you@company.com",
+                form_msg_label: "Message about the role or project",
+                form_msg_ph: "Tell me a bit about the position, project, or scope...",
+                form_submit: "Send Message",
+                footer_rights: "© 2026 Jorge Luiz Susin Rodrigues. All rights reserved."
+            }
+        };
+
+        let currentLang = localStorage.getItem('portfolio_lang') || 'pt';
+        let currentTheme = localStorage.getItem('portfolio_theme') || 'dark';
+
+        function applyLanguage(lang) {
+            document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en-US';
+            const dict = translations[lang];
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (dict[key]) {
+                    el.innerHTML = dict[key];
+                }
+            });
+
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (dict[key]) {
+                    el.setAttribute('placeholder', dict[key]);
+                }
+            });
+
+            // Mostra no botão o idioma para o qual o usuário pode alternar
+            document.getElementById('lang-label').textContent = lang === 'pt' ? 'EN' : 'PT';
+            localStorage.setItem('portfolio_lang', lang);
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'pt' ? 'en' : 'pt';
+            applyLanguage(currentLang);
+        }
+
+        function applyTheme(theme) {
+            const htmlEl = document.documentElement;
+            const sunIcon = document.getElementById('theme-icon-sun');
+            const moonIcon = document.getElementById('theme-icon-moon');
+
+            if (theme === 'dark') {
+                htmlEl.classList.add('dark');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            } else {
+                htmlEl.classList.remove('dark');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+            localStorage.setItem('portfolio_theme', theme);
+        }
+
+        function toggleTheme() {
+            currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(currentTheme);
+        }
+
+        // Inicializa o estado salvo ao carregar a página
+        applyTheme(currentTheme);
+        applyLanguage(currentLang);
     </script>
 </body>
 </html>
